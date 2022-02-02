@@ -257,6 +257,9 @@ for _, lsp in ipairs(servers) do
         end
       end)
     end;
+    flags = {
+      debounce_text_changes = 150,
+    },
     init_options = {
       -- these options are passed directly to the LSP server (ccls in our case).
       -- ccls options documented here: https://github.com/MaskRay/ccls/wiki/Customization
