@@ -1,0 +1,22 @@
+# Remove all comments before use as .ccls does not support comments
+clang
+%h -x
+%h c++-header
+%cpp -std=c++17
+%c -std=c18
+%cu -std=c++17
+# Linux
+-I/home/<USER>/include
+# MAC OS X
+-I/Users/<USER>/include
+# Add includes following `#include <...> search starts here:` from the output of
+#   - g++ -E -x c++ - -v < /dev/null, or
+#   - clang -v -fsyntax-only -x c++ /dev/null
+# using -isystem
+# Example
+#-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1
+#-isystem/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include
+#-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+#-isystem/Library/Developer/CommandLineTools/usr/include
+#-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
+-I./<SUBPROJECT>/include
