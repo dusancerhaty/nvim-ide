@@ -57,7 +57,7 @@ require('packer').startup(function()
 end)
 
 --Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 
 --Make line numbers default
 vim.wo.number = true
@@ -327,5 +327,21 @@ vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>cprevious<CR>', { noremap = true
 -- Run commands in back/fore-ground
 vim.cmd [[command! -nargs=1 Bg execute 'silent ' . <q-args>]]
 vim.cmd [[command! -nargs=1 Fg execute '' . <q-args> | execute 'redraw!']]
+
+vim.o.history = 1000
+vim.o.undolevels = 10000
+vim.o.wrap = false
+
+-- Search but say in the current search occurance
+vim.api.nvim_set_keymap('n', '*', '*N', { noremap = true, silent = true })
+
+-- Clear current search highlight by double tapping //
+vim.api.nvim_set_keymap('n', '//', '<cmd>nohlsearch<CR>', { noremap = true, silent = true })
+
+-- Remember last position in file
+vim.cmd [[
+  autocmd BufRead * autocmd FileType <buffer> ++once
+      \ if &ft !~# 'commit\|rebase' && line("'\"") > 1 && line("'\"") <= line("$") | exe 'normal! g`"' | endif
+]]
 
 -- vim: ts=2 sts=2 sw=2 et
