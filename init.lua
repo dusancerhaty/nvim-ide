@@ -99,9 +99,9 @@ require('lualine').setup {
 require('Comment').setup()
 
 --Remap space as leader key
-vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.api.nvim_set_keymap('', ',', '<Nop>', { noremap = true, silent = true })
+vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 
 --Remap for dealing with word wrap
 vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
@@ -313,5 +313,14 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- Change makeprg
+vim.opt.makeprg = 'scons'
+
+-- Quickfix
+vim.api.nvim_set_keymap('n', '<leader>co', '<cmd>copen 10<CR><cmd>normal <C-w>J<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>cq', '<cmd>cclose<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>cnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>cprevious<CR>', { noremap = true, silent = true })
 
 -- vim: ts=2 sts=2 sw=2 et
