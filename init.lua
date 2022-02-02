@@ -344,4 +344,11 @@ vim.cmd [[
       \ if &ft !~# 'commit\|rebase' && line("'\"") > 1 && line("'\"") <= line("$") | exe 'normal! g`"' | endif
 ]]
 
+-- Highlighting of word under cursor
+-- Shorten the timeout for highlighting the line
+vim.g.cursorline_timeout = 0
+-- Do not use plugin default
+vim.g.cursorword_highlight = false
+vim.cmd [[hi! CursorWord term=inverse cterm=inverse gui=inverse]]
+
 -- vim: ts=2 sts=2 sw=2 et
