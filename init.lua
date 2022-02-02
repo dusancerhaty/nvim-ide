@@ -53,6 +53,7 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  use 'yamatsum/nvim-cursorline'
 end)
 
 --Set highlight on search
@@ -322,5 +323,9 @@ vim.api.nvim_set_keymap('n', '<leader>co', '<cmd>copen 10<CR><cmd>normal <C-w>J<
 vim.api.nvim_set_keymap('n', '<leader>cq', '<cmd>cclose<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>cnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>cprevious<CR>', { noremap = true, silent = true })
+
+-- Run commands in back/fore-ground
+vim.cmd [[command! -nargs=1 Bg execute 'silent ' . <q-args>]]
+vim.cmd [[command! -nargs=1 Fg execute '' . <q-args> | execute 'redraw!']]
 
 -- vim: ts=2 sts=2 sw=2 et
