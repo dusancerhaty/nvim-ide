@@ -1,4 +1,5 @@
 # Remove all comments before use as .ccls does not support comments
+# Detailed info at https://jdhao.github.io/2020/11/29/neovim_cpp_dev_setup/
 clang
 %h -x
 %h c++-header
