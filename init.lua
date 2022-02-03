@@ -6,7 +6,11 @@
 -- Set local servers = { 'ccls' }
 -- Rewrite use 'nvim-treesitter/nvim-treesitter' to use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 -- Add ensure_installed = "maintained" to require('nvim-treesitter.configs').setup
+-- Install ripgrep
 -- Install ccls
+-- Install luaffi if needed
+-- - Install luarocks
+-- - https://github.com/facebookarchive/luaffifb#build
 -- FIRST RUN
 -- Run nvim
 -- Run :PackerInstall - ignore error regarding to nvim-treesitter/nvim-treesitter-textobjects
