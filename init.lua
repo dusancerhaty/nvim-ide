@@ -137,6 +137,7 @@ require('gitsigns').setup {
     topdelete = { text = '‾' },
     changedelete = { text = '~' },
   },
+  sign_priority = 10,
 }
 
 -- Telescope
