@@ -341,6 +341,8 @@ vim.cmd [[command! -nargs=1 Fg execute '' . <q-args> | execute 'redraw!']]
 vim.o.history = 1000
 vim.o.undolevels = 10000
 vim.o.wrap = false
+vim.o.textwidth = 109
+vim.o.colorcolumn = '+1'
 
 -- Search but say in the current search occurance
 vim.api.nvim_set_keymap('n', '*', '*N', { noremap = true, silent = true })
