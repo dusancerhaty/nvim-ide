@@ -333,6 +333,8 @@ vim.opt.makeprg = 'scons --verbose-level=none'
 vim.api.nvim_set_keymap('n', '<leader>co', '<cmd>copen 10<CR><cmd>normal <C-w>J<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>cq', '<cmd>cclose<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>cl', '<cmd>clist<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>cfirst<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>l', '<cmd>clast<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>cnext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>cprevious<CR>', { noremap = true, silent = true })
 
