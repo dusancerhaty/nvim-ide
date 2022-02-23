@@ -260,7 +260,7 @@ for _, lsp in ipairs(servers) do
     root_dir = function(startpath)
       return lspconfig.util.search_ancestors(startpath, function(path)
         -- Support git directories
-        if lspconfig.util.path.is_dir(lspconfig.util.path.join(path, '.git')) then
+        if lspconfig.util.path.is_dir(lspconfig.util.path.join(path, '.git')) or lspconfig.util.path.is_dir(lspconfig.util.path.join(path, '.github')) then
           return path
         end
       end)
