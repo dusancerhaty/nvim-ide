@@ -11,6 +11,9 @@
 -- Install luaffi if needed
 -- - Install luarocks
 -- - https://github.com/facebookarchive/luaffifb#build
+-- Install fd
+-- - ubuntu: apt-get install fd-find
+-- - homebrew: brew install fd
 -- FIRST RUN
 -- Run nvim
 -- Run :PackerInstall - ignore error regarding to nvim-treesitter/nvim-treesitter-textobjects
