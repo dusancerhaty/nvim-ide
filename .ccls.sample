@@ -21,3 +21,7 @@ clang
 #-isystem/Library/Developer/CommandLineTools/usr/include
 #-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
 -I./<SUBPROJECT>/include
+-DLINUX
+-DMODULE_ID=mod_X_0_0_0
+-DMODULE_MAJOR_VER=0
+-DMODULE_MINOR_VER=0
