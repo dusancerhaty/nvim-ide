@@ -169,6 +169,11 @@ vim.api.nvim_set_keymap('n', '<leader>sp', [[<cmd>lua require('telescope.builtin
 vim.api.nvim_set_keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sa', [[<cmd>lua require('telescope.builtin').builtin()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sgs', [[<cmd>lua require('telescope.builtin').git_status{cwd = vim.fn.expand("%:p:h"),}<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sgb', [[<cmd>lua require('telescope.builtin').git_branches{cwd = vim.fn.expand("%:p:h"),}<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sgc', [[<cmd>lua require('telescope.builtin').git_commits{cwd = vim.fn.expand("%:p:h"),}<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sgo', [[<cmd>lua require('telescope.builtin').git_bcommits{cwd = vim.fn.expand("%:p:h"),}<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sgf', [[<cmd>lua require('telescope.builtin').git_files{cwd = vim.fn.expand("%:p:h"),}<CR>]], { noremap = true, silent = true })
 
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
