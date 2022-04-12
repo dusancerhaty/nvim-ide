@@ -178,7 +178,7 @@ vim.api.nvim_set_keymap('n', '<leader>sgf', [[<cmd>lua require('telescope.builti
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
 require('nvim-treesitter.configs').setup {
-  ensure_installed = "maintained",
+  ensure_installed = "all",
   highlight = {
     enable = true, -- false will disable the whole extension
   },
