@@ -21,6 +21,9 @@ clang
 #-isystem/Library/Developer/CommandLineTools/usr/include
 #-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
 -I./<SUBPROJECT>/include
+-DEXPORTS_DESCR
+-DCOMMON_THREAD_SAFE
+-DUSE_DMNS_LEAK_CHECK
 -DNUSE_BLIND_DAEMON
 -DNUSE_LICENSE
 -DNUSE_CWD_ROOT
