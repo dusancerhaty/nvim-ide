@@ -62,6 +62,7 @@ require('packer').startup(function()
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'yamatsum/nvim-cursorline'
   use 'ellisonleao/gruvbox.nvim'
+  use 'tibabit/vim-templates'
 end)
 
 --Set highlight on search
@@ -374,5 +375,10 @@ vim.g.cursorline_timeout = 0
 -- Do not use plugin default
 vim.g.cursorword_highlight = false
 vim.cmd [[hi! CursorWord term=inverse cterm=inverse gui=inverse]]
+
+-- vim-templates
+vim.cmd [[ let g:tmpl_search_paths = ['~/.config/nvim/templates'] ]]
+vim.g.tmpl_author_name = 'Dusan Cerhaty'
+vim.g.tmpl_author_email = 'cerhaty@eset.sk'
 
 -- vim: ts=2 sts=2 sw=2 et
