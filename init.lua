@@ -411,11 +411,18 @@ vim.cmd [[
 ]]
 
 -- Highlighting of word under cursor
--- Shorten the timeout for highlighting the line
-vim.g.cursorline_timeout = 0
--- Do not use plugin default
-vim.g.cursorword_highlight = false
-vim.cmd [[hi! CursorWord term=inverse cterm=inverse gui=inverse]]
+require('nvim-cursorline').setup {
+  cursorline = {
+    enable = true,
+    timeout = 0,
+    number = true,
+  },
+  cursorword = {
+    enable = true,
+    min_length = 1,
+    hl = { reverse = true },
+  }
+}
 
 -- vim-templates
 vim.cmd [[ let g:tmpl_search_paths = ['~/.config/nvim/templates'] ]]
