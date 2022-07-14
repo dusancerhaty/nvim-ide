@@ -378,6 +378,7 @@ end
 
 -- Change makeprg
 vim.opt.makeprg = 'scons --verbose-level=none'
+vim.opt.shellpipe = '2>&1| tee .build.log'
 
 -- Quickfix
 vim.api.nvim_set_keymap('n', '<leader>co', '<cmd>copen 10<CR><cmd>normal <C-w>J<CR>', { noremap = true, silent = true })
