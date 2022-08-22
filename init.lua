@@ -66,6 +66,15 @@ require('packer').startup(function()
   use 'yamatsum/nvim-cursorline'
   use 'ellisonleao/gruvbox.nvim'
   use 'tibabit/vim-templates'
+  use {
+    'rmagatti/auto-session',
+    config = function()
+      require('auto-session').setup {
+        log_level = 'info',
+        auto_session_suppress_dirs = {'~/', '~/Projects'}
+      }
+    end
+  }
 end)
 
 --Set highlight on search
@@ -425,9 +434,12 @@ require('nvim-cursorline').setup {
   }
 }
 
+-- Load user config file
+dofile(os.getenv("HOME") .. '/.config/nvim/user-config.lua')
+
 -- vim-templates
 vim.cmd [[ let g:tmpl_search_paths = ['~/.config/nvim/templates'] ]]
-vim.g.tmpl_author_name = 'Dusan Cerhaty'
-vim.g.tmpl_author_email = 'cerhaty@eset.sk'
+vim.g.tmpl_author_name = AUTHOR_NAME
+vim.g.tmpl_author_email = AUTHOR_EMAIL
 
 -- vim: ts=2 sts=2 sw=2 et
