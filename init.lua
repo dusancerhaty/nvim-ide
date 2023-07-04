@@ -386,7 +386,7 @@ for _, lsp in ipairs(servers) do
 end
 
 -- Change makeprg
-vim.opt.makeprg = 'scons --verbose-level=none'
+vim.opt.makeprg = 'scons --verbose-level=none --with=compiler_color=off'
 vim.opt.shellpipe = '2>&1| tee .build.log'
 
 -- Quickfix
