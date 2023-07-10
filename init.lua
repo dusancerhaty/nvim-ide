@@ -442,4 +442,15 @@ vim.cmd [[ let g:tmpl_search_paths = ['~/.config/nvim/templates'] ]]
 vim.g.tmpl_author_name = AUTHOR_NAME
 vim.g.tmpl_author_email = AUTHOR_EMAIL
 
+-- Copy to system clipboard
+vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>Y', '"+yg_', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>y', '"+y', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>yy', '"+yy', { noremap = true, silent = true })
+-- Paste from system clipboard
+vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>P', '"+P', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>p', '"+p', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>P', '"+P', { noremap = true, silent = true })
+
 -- vim: ts=2 sts=2 sw=2 et
