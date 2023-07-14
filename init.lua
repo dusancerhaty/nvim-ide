@@ -75,7 +75,22 @@ require('packer').startup(function()
       }
     end
   }
+  use { 'folke/trouble.nvim', requires = { 'folke/lsp-colors.nvim' } }
+  use { 'folke/todo-comments.nvim', requires = { 'folke/trouble.nvim', 'nvim-tree/nvim-web-devicons' } }
 end)
+
+require('nvim-web-devicons').setup {
+}
+
+require('trouble').setup {
+  opts = {
+  },
+}
+
+require('todo-comments').setup {
+  opts = {
+  },
+}
 
 --Set highlight on search
 vim.o.hlsearch = true
