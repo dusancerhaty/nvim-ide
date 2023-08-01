@@ -469,7 +469,7 @@ vim.g.loaded_netrwPlugin = 1
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   view = {
-    width = 30,
+    width = 50,
   },
   renderer = {
     group_empty = true,
