@@ -479,4 +479,10 @@ require("nvim-tree").setup({
   },
 })
 
+vim.api.nvim_set_keymap('n', '<leader>to', '<cmd>NvimTreeOpen<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tc', '<cmd>NvimTreeClose<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tt', '<cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tf', '<cmd>NvimTreeFocus<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tr', '<cmd>NvimTreeRefresh<CR>', { noremap = true, silent = true })
+
 -- vim: ts=2 sts=2 sw=2 et
