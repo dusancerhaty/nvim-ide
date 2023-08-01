@@ -77,6 +77,7 @@ require('packer').startup(function()
   }
   use { 'folke/trouble.nvim', requires = { 'folke/lsp-colors.nvim' } }
   use { 'folke/todo-comments.nvim', requires = { 'folke/trouble.nvim', 'nvim-tree/nvim-web-devicons' } }
+  use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' } }
 end)
 
 require('nvim-web-devicons').setup {
@@ -459,5 +460,23 @@ vim.g.tmpl_author_email = AUTHOR_EMAIL
 
 -- Copying and pasting works through system clipboard
 vim.api.nvim_set_option("clipboard", "unnamed")
+
+-- nvim-tree
+-- disable netrw for proper nvim-tree functionality
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
+    width = 30,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
 
 -- vim: ts=2 sts=2 sw=2 et
