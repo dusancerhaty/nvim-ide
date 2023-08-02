@@ -474,9 +474,6 @@ require("nvim-tree").setup({
   renderer = {
     group_empty = true,
   },
-  filters = {
-    dotfiles = true,
-  },
 })
 
 vim.api.nvim_set_keymap('n', '<leader>to', '<cmd>NvimTreeOpen<CR>', { noremap = true, silent = true })
