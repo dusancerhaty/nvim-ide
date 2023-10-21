@@ -114,7 +114,7 @@ vim.o.smartcase = true
 
 --Decrease update time
 vim.o.updatetime = 250
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = 'auto:1-9'
 
 --Set colorscheme
 vim.o.termguicolors = true
@@ -169,6 +169,8 @@ require('gitsigns').setup {
     topdelete = { text = '‾' },
     changedelete = { text = '~' },
   },
+  numhl = true,
+  current_line_blame = true,
   sign_priority = 10,
 }
 
