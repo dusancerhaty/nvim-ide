@@ -122,12 +122,14 @@ require('nvim-web-devicons').setup {
 }
 
 require('trouble').setup {
-  opts = {
-  },
+  padding = false,
+  auto_preview = false,
+  auto_fold = true,
 }
 
 require('todo-comments').setup {
-  opts = {
+  highlight = {
+    keyword = "bg",
   },
 }
 
@@ -210,7 +212,7 @@ require('gitsigns').setup {
   },
   numhl = true,
   current_line_blame = true,
-  sign_priority = 10,
+  sign_priority = 7,
 }
 
 -- Telescope
@@ -457,7 +459,7 @@ vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>cprevious<CR>', { noremap = true
 
 -- Run commands in back/fore-ground
 vim.cmd [[command! -nargs=1 Bg execute 'silent ' . <q-args>]]
-vim.cmd [[command! -nargs=1 Fg execute '' . <q-args> | execute 'redraw!']]
+vim.cmd [[command! -nargs=1 Fg execute '' . <q-args> | execute 'redraw!' | execute 'Trouble quickfix' | execute "normal\<Esc>"]]
 
 vim.o.history = 1000
 vim.o.undolevels = 10000
@@ -522,5 +524,13 @@ vim.api.nvim_set_keymap('n', '<leader>tc', '<cmd>NvimTreeClose<CR>', { noremap =
 vim.api.nvim_set_keymap('n', '<leader>tt', '<cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>tf', '<cmd>NvimTreeFocus<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>tr', '<cmd>NvimTreeRefresh<CR>', { noremap = true, silent = true })
+
+-- Trouble key mappings
+vim.keymap.set("n", "<leader>xx", function() require("trouble").open() end)
+vim.keymap.set("n", "<leader>xw", function() require("trouble").open("workspace_diagnostics") end)
+vim.keymap.set("n", "<leader>xd", function() require("trouble").open("document_diagnostics") end)
+vim.keymap.set("n", "<leader>xq", function() require("trouble").open("quickfix") end)
+vim.keymap.set("n", "<leader>xl", function() require("trouble").open("loclist") end)
+vim.keymap.set("n", "gR", function() require("trouble").open("lsp_references") end)
 
 -- vim: ts=2 sts=2 sw=2 et
