@@ -79,6 +79,7 @@ require('packer').startup(function()
   use { 'folke/todo-comments.nvim', requires = { 'folke/trouble.nvim', 'nvim-tree/nvim-web-devicons' } }
   use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' } }
   use 'folke/tokyonight.nvim'
+  use 'sindrets/diffview.nvim'
 end)
 
 -- Tokyonight colorscheme
@@ -532,5 +533,8 @@ vim.keymap.set("n", "<leader>xd", function() require("trouble").open("document_d
 vim.keymap.set("n", "<leader>xq", function() require("trouble").open("quickfix") end)
 vim.keymap.set("n", "<leader>xl", function() require("trouble").open("loclist") end)
 vim.keymap.set("n", "gR", function() require("trouble").open("lsp_references") end)
+
+-- Enable Diffview.nvim
+require('diffview').setup()
 
 -- vim: ts=2 sts=2 sw=2 et
