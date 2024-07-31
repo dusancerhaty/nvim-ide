@@ -537,4 +537,7 @@ vim.keymap.set("n", "gR", function() require("trouble").open("lsp_references") e
 -- Enable Diffview.nvim
 require('diffview').setup()
 
+-- auto-session
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 -- vim: ts=2 sts=2 sw=2 et
