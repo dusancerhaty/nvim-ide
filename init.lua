@@ -393,7 +393,7 @@ vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setqflist()<C
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local lspconfig = require 'lspconfig'
+local lspconfig = vim.lsp.config
 local on_attach = function(_, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -420,7 +420,7 @@ end
 -- map buffer local keybindings when the language server attaches
 local servers = { 'ccls' }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  lspconfig(lsp, {
     on_attach = on_attach,
     capabilities = capabilities,
     root_dir = function(startpath)
@@ -442,7 +442,7 @@ for _, lsp in ipairs(servers) do
         threads = 6
       }
     }
-  }
+  })
 end
 
 -- Change makeprg
